@@ -1,4 +1,14 @@
 Pb::Application.routes.draw do
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  get "public/index"
+
+  get "public/signup"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
