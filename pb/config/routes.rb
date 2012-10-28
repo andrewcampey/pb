@@ -1,13 +1,19 @@
 Pb::Application.routes.draw do
-  get "sessions/new"
+	resources :sessions, only: [:new, :create, :destroy]
 
-  get "sessions/create"
+	match '/signup',  to: 'public#signup'
+	match '/signin',  to: 'public#index'
+	
+	get "sessions/new"
 
-  get "sessions/destroy"
+	get "sessions/create"
 
-  get "public/index"
+	get "sessions/destroy"
 
-  get "public/signup"
+	get "public/index"
+
+	get "public/signup"
+	post 'public/create' => 'public#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -65,4 +71,5 @@ Pb::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  root :to => 'public#index'
 end

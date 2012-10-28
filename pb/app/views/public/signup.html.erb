@@ -1,2 +1,32 @@
-<h1>Public#signup</h1>
-<p>Find me in app/views/public/signup.html.erb</p>
+<% provide(:title, 'Sign up') %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_tag :action => 'create' do %>
+	
+	<h2>Organisation Details</h2>
+      <%= label :organisation, :name %>
+      <%= text_field :organisation, :name, placeholder:"Organisation Name" %>
+	  
+	  <%= label :organisation, :schema %>
+      <%= text_field :organisation, :schema, placeholder:"Schema" %>
+	<br/><br/>
+	<h2>User Details</h2>
+      <%= label :user, :firstname %>
+      <%= text_field :user, :firstname, placeholder:"First Name" %>
+	  
+	  <%= label :user, :lastname %>
+      <%= text_field :user, :lastname, placeholder:"Last Name" %>
+	  
+      <%= label :user, :email %>
+      <%= text_field :user, :email, placeholder:"Email" %>
+
+      <%= label :user, :password %>
+      <%= password_field :user, :password, placeholder:"Password" %>
+
+      <%= label :password_confirmation, "Confirmation" %>
+      <%= password_field :user, :password_confirmation, placeholder:"Confirm Password" %>
+
+      <%= submit_tag "Create my account", class: "btn btn-large btn-primary" %>
+	<% end %>
+  </div>
+</div>
