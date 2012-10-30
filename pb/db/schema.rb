@@ -11,11 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121028105700) do
+ActiveRecord::Schema.define(:version => 20121030092204) do
 
-  create_table "organisations", :force => true do |t|
+  create_table "companies", :force => true do |t|
     t.string   "name"
     t.string   "schema"
+    t.string   "timestamps"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20121028105700) do
     t.string   "lastname"
     t.string   "remember_token"
     t.integer  "organisation_id"
+    t.string   "timestamps"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

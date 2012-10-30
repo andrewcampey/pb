@@ -1,5 +1,20 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  email           :string(255)
+#  password_digest :string(255)
+#  firstname       :string(255)
+#  lastname        :string(255)
+#  remember_token  :string(255)
+#  organisation_id :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ActiveRecord::Base
-	belongs_to :organisation
+	belongs_to :company
 	
 	attr_accessible :email, :firstname, :lastname, :password, :password_confirmation, :remember_token, :organisation_id
 	has_secure_password

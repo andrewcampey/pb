@@ -7,14 +7,14 @@ class PublicController < ApplicationController
   end
   
   	def create
-		@organisation = Organisation.new(params[:organisation])
-		@organisation.save
+		@company = Company.new(params[:company])
+		@company.save
 		
 		p = params[:user]
-		p[:organisation_id] = @organisation.id
+		p[:company_id] = @company.id
 		@user = User.new(p)
 		
 		@user.save
-		Apartment::Database.create(@organisation.schema)
+		Apartment::Database.create(@company.schema)
 	end
 end
